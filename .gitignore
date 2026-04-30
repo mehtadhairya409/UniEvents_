@@ -1,0 +1,17 @@
+# Root
+node_modules/
+.DS_Store
+*.log
+
+# Client
+client/node_modules/
+client/build/
+client/.env.local
+client/.env.production
+
+# Server
+server/node_modules/
+server/.env
+server/data/*.db
+server/data/*.db-shm
+server/data/*.db-wal
