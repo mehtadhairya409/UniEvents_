@@ -156,13 +156,11 @@ const Landing = () => {
                 Built for students, designed for the modern university.
               </p>
 
-              <div className="animate-fade-up delay-4" style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-                <button className="btn-primary" style={{ fontSize: "15px", padding: "14px 34px" }}
-                  onClick={() => navigate("/events")}>
+              <div className="animate-fade-up delay-4 landing-hero-btns">
+                <button className="btn-primary hero-btn" onClick={() => navigate("/events")}>
                   Explore Events &rarr;
                 </button>
-                <button className="btn-ghost" style={{ fontSize: "15px", padding: "14px 34px" }}
-                  onClick={() => navigate("/register")}>
+                <button className="btn-ghost hero-btn" onClick={() => navigate("/register")}>
                   Create Account
                 </button>
               </div>
@@ -364,8 +362,28 @@ const Landing = () => {
       </footer>
 
       <style>{`
+        .landing-hero-btns {
+          display: flex;
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+        .hero-btn {
+          font-size: 15px;
+          padding: 14px 34px;
+        }
         @media (max-width: 1024px) {
           .hero-cards-col { display: none !important; }
+        }
+        @media (max-width: 768px) {
+          .landing-hero-btns {
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+          }
+          .hero-btn {
+            width: 100%;
+            justify-content: center;
+          }
         }
       `}</style>
     </div>

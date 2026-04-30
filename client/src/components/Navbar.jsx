@@ -51,7 +51,7 @@ const Navbar = () => {
         boxShadow: scrolled ? "var(--shadow-nav)" : "none",
         transition: "all 0.3s ease",
       }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
+        <div className="navbar-inner" style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
           <div style={{ height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
 
             {/* LOGO */}
@@ -157,7 +157,7 @@ const Navbar = () => {
                         fontFamily: "var(--font-display)", fontWeight: "900", fontSize: "13px",
                         color: "#fff", flexShrink: 0
                       }}>{user.name?.charAt(0).toUpperCase()}</div>
-                      <span style={{ fontSize: "13px", fontWeight: "600", maxWidth: "90px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", color: "var(--text-primary)" }}>
+                      <span className="nav-user-name" style={{ fontSize: "13px", fontWeight: "600", maxWidth: "90px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", color: "var(--text-primary)" }}>
                         {user.name?.split(" ")[0]}
                       </span>
                       <span style={{ opacity: 0.5, color: "var(--text-muted)", lineHeight: 0 }}><ChevronIcon /></span>
@@ -259,6 +259,8 @@ const Navbar = () => {
           .desktop-nav { display: none !important; }
           .hamburger-btn { display: block !important; }
           .theme-label { display: none; }
+          .nav-user-name { display: none; }
+          .navbar-inner { padding: 0 16px !important; }
         }
         @media (max-width: 900px) {
           .theme-label { display: none; }
