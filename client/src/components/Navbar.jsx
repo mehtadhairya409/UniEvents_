@@ -123,7 +123,9 @@ const Navbar = () => {
 
               {user ? (
                 <>
-                  <NotificationBell />
+                  <div className="desktop-notification-btn">
+                    <NotificationBell />
+                  </div>
                   {user.role === "admin" && (
                     <Link to="/admin" className="desktop-admin-btn">
                       <button style={{
@@ -200,7 +202,7 @@ const Navbar = () => {
                   </div>
                 </>
               ) : (
-                <div style={{ display: "flex", gap: "8px" }}>
+                <div className="desktop-auth-btns" style={{ display: "flex", gap: "8px" }}>
                   <Link to="/login"><button className="btn-ghost btn-sm">Login</button></Link>
                   <Link to="/register"><button className="btn-primary btn-sm">Get Started</button></Link>
                 </div>
@@ -262,6 +264,8 @@ const Navbar = () => {
           .nav-user-name { display: none; }
           .desktop-admin-btn { display: none !important; }
           .desktop-user-menu { display: none !important; }
+          .desktop-auth-btns { display: none !important; }
+          .desktop-notification-btn { display: none !important; }
           .navbar-inner { padding: 0 16px !important; }
         }
         @media (max-width: 900px) {
