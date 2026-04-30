@@ -125,7 +125,7 @@ const Navbar = () => {
                 <>
                   <NotificationBell />
                   {user.role === "admin" && (
-                    <Link to="/admin">
+                    <Link to="/admin" className="desktop-admin-btn">
                       <button style={{
                         display: "flex", alignItems: "center", gap: "6px",
                         padding: "7px 14px",
@@ -140,7 +140,7 @@ const Navbar = () => {
                   )}
 
                   {/* User menu */}
-                  <div style={{ position: "relative" }} ref={dropdownRef}>
+                  <div className="desktop-user-menu" style={{ position: "relative" }} ref={dropdownRef}>
                     <button onClick={() => setDropdownOpen(!dropdownOpen)} style={{
                       display: "flex", alignItems: "center", gap: "8px",
                       padding: "5px 10px 5px 5px",
@@ -260,6 +260,8 @@ const Navbar = () => {
           .hamburger-btn { display: block !important; }
           .theme-label { display: none; }
           .nav-user-name { display: none; }
+          .desktop-admin-btn { display: none !important; }
+          .desktop-user-menu { display: none !important; }
           .navbar-inner { padding: 0 16px !important; }
         }
         @media (max-width: 900px) {
